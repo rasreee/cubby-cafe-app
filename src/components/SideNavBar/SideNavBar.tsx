@@ -1,27 +1,27 @@
-import * as ReactDOM from 'react-dom';
 import * as React from 'react';
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations';
-import { ListViewComponent, SelectEventArgs } from '@syncfusion/ej2-react-lists';
+import { ListViewComponent } from '@syncfusion/ej2-react-lists';
 import { BaseComponent } from '../common/index';
-import './sidebar-list.css';
+// import styles from './SideNavbar.css';
+import { EmptyObject } from '../../shared/custom-types';
 
-export class SideNavBar extends BaseComponent<{}, {}> {
+export class SideNavbar extends BaseComponent<EmptyObject, EmptyObject> {
     public sidebarobj: SidebarComponent;
-    public dataList: { [key: string]: Object }[] = [
+    public dataList: { [key: string]: string }[] = [
         { text: 'Home' },
         { text: 'About' },
         { text: 'Careers' },
         { text: 'FAQs' },
         { text: 'Blog' },
         { text: 'Uses' },
-        { text: 'Contact' },
+        { text: 'Contact' as string },
     ];
-    public fields: object = { tooltip: 'text' };
+    public fields: Record<string, unknown> = { tooltip: 'text' };
     render() {
         return (
             <div className="control-section sidebar-list">
-                className="col-lg-12 col-sm-12 col-md-12 center">
-                Click/Touch the button to view the sample
+                <div className="col-lg-12 col-sm-12 col-md-12 center">
+                    Click/Touch the button to view the sample
                 </div>
                 <div className="col-lg-12 col-sm-12 col-md-12 center">
                     <a
@@ -29,7 +29,7 @@ export class SideNavBar extends BaseComponent<{}, {}> {
                         id="newTab"
                         target="_blank"
                         onClick={this.newTabClick.bind(this)}
-
+                    >
                         Open in new Tab
                     </a>
                 </div>
@@ -73,13 +73,13 @@ export class SideNavBar extends BaseComponent<{}, {}> {
                 <div id="action-description">
                     <p> Click/Touch the button to view the Sidebar sample in new tab.</p>
                 </div>
-                        "description" >
-
-            I In this sample, the ListView component is placed inside the Sidebar for
-                         navigation.
-                     </p >
-                </div >
-            </div >
+                <div id="description">
+                    <p>
+                        I In this sample, the ListView component is placed inside the Sidebar for
+                        navigation.
+                    </p>
+                </div>
+            </div>
         );
     }
 
@@ -89,21 +89,20 @@ export class SideNavBar extends BaseComponent<{}, {}> {
         document
             .getElementById('newTab')
             .setAttribute('href', URL.split('#')[0] + 'sidebar/sidebar-list/index.html');
-
-
-        onSelect(args: any): void {
-            this.sidebarobj.hide();
-            lector('.textArea').textContent = args.text + ' Page Content';
-        }
-
-        //open the sidebar
-        openClick(): void {
-            this.sidebarobj.show();
-        }
-
-        //close the sidebar
-        closeClick(): void {
-            hide();
-
-        }
     }
+
+    onSelect(args: any): void {
+        this.sidebarobj.hide();
+        document.querySelector('.textArea').textContent = args.text + ' Page Content';
+    }
+
+    //open the sidebar
+    openClick(): void {
+        this.sidebarobj.show();
+    }
+
+    //close the sidebar
+    closeClick(): void {
+        this.sidebarobj.hide();
+    }
+}

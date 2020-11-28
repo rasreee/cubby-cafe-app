@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppContext } from './AppContext';
-import { SideNavBar } from './components/index';
+import { SideNavbar } from './components/index';
+import { EmptyObject } from './shared/custom-types';
 
 // import { getLinkPreview } from 'link-preview-js';
 
@@ -19,7 +20,10 @@ import { SideNavBar } from './components/index';
 //     });
 // }
 
-function App(): React.ReactElement {
+// interface appProps { }
+
+// eslint-disable-next-line prettier/prettier
+const App: React.FC<EmptyObject> = ({ }) => {
     return (
         <AppContext.Provider
             value={{
@@ -28,9 +32,9 @@ function App(): React.ReactElement {
                 theme: 'light',
             }}
         >
-            <SideNavBar />
+            <SideNavbar />
         </AppContext.Provider>
     );
-}
+};
 
 export default App;

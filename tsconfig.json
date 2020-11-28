@@ -2,8 +2,9 @@
     "compilerOptions": {
         "target": "es6",
         "module": "commonjs",
-        "outDir": "./build",
-        "lib": ["dom", "dom.iterable", "esnext"],
+        "outDir": "./build/",
+        "baseUrl": "./",
+        "lib": ["es5", "es6", "dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,
@@ -17,6 +18,6 @@
         "jsx": "react",
         "sourceMap": true
     },
-    "include": ["src"],
+    "include": ["./src/**/*", "index.tsx"],
     "exclude": ["node_modules"]
 }

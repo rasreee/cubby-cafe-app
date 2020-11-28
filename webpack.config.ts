@@ -1,9 +1,10 @@
-import path from 'path';
+import path, { resolve } from 'path';
 import webpack from 'webpack';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 const config: webpack.Configuration = {
-    entry: './src/index.tsx',
+    entry: './index.tsx',
+    // entry: ['webpack-dev-server?http://localhost:3000', 'webpack/hot/only-dev-server'],
     module: {
         rules: [
             {
@@ -20,21 +21,33 @@ const config: webpack.Configuration = {
                     },
                 },
             },
+            {
+                test: /\.css$/,
+                use: [
+                    'css-modules-typescript-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                        },
+                    },
+                ],
+            },
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
     },
+    context: resolve(__dirname, 'src'),
     output: {
-        path: path.resolve(__dirname, 'build'),
+        publicPath: 'public',
+        path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js',
     },
     devtool: 'source-map',
     devServer: {
-        contentBase: path.join(__dirname, 'build'),
-        // compress: true,
-        hot: true,
-        liveReload: true,
+        contentBase: './build',
+        hotOnly: true,
         port: 3000,
     },
     plugins: [

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { initSideNavBarRoutes } from './index';
+import { initSideNavbarRoutes } from './index';
 
 import {
     onComponentLoad,
@@ -22,14 +22,14 @@ function viewSwitch(from: HTMLElement, to: HTMLElement, reverse?: boolean): void
     controlscreens.classList.add('control-screens-animate');
     from.style.overflowY = 'hidden';
     to.style.overflowY = 'hidden';
-    to.classList.remove('sb-hide');
+    to.classList.remove('sideNavbar-hide');
     animation.animate(from, {
         name: reverse ? 'SlideRightOut' : 'SlideLeftOut',
         end: (): void => {
             controlscreens.classList.remove('control-screens-animate');
             from.style.overflowY = '';
             to.style.overflowY = '';
-            from.classList.add('sb-hide');
+            from.classList.add('sideNavbar-hide');
         },
     });
     animation.animate(to, { name: reverse ? 'SlideLeftIn' : 'SlideRightIn' });
@@ -66,7 +66,7 @@ export class BaseComponent<P, S> extends React.PureComponent<RouteComponentProps
 
     componentDidMount(): void {
         renderDescriptions();
-        initSideNavBarRoutes();
+        initSideNavbarRoutes();
         onComponentLoad();
         setNavButtonState();
         setTimeout(() => {

@@ -11,11 +11,11 @@ declare let screen: BaseScreen;
 let hash: string[];
 const propRegex = /-3/;
 let apiGrid: any;
-const propBorder: HTMLElement = createElement('div', { className: 'sb-property-border' });
+const propBorder: HTMLElement = createElement('div', { className: 'sideNavbar-property-border' });
 let numberOfScreens: number;
 let isMobile: boolean;
 
-const mobilePropPane: Element = select('.sb-mobile-prop-pane');
+const mobilePropPane: Element = select('.sideNavbar-mobile-prop-pane');
 
 export function selectDefaultTab(): void {
     if (sourceTab) {
@@ -63,27 +63,27 @@ export function onComponentLoad(): void {
     const propPanel: Element = select('#control-content .property-section');
     if (propPanel) {
         if (propRegex.test(propPanel.className)) {
-            propBorder.classList.add('sb-prop-md-3');
-            propBorder.classList.remove('sb-prop-md-4');
+            propBorder.classList.add('sideNavbar-prop-md-3');
+            propBorder.classList.remove('sideNavbar-prop-md-4');
         } else {
-            propBorder.classList.add('sb-prop-md-4');
-            propBorder.classList.remove('sb-prop-md-3');
+            propBorder.classList.add('sideNavbar-prop-md-4');
+            propBorder.classList.remove('sideNavbar-prop-md-3');
         }
-        propBorder.classList.remove('sb-hide');
+        propBorder.classList.remove('sideNavbar-hide');
     } else {
-        propBorder.classList.add('sb-hide');
+        propBorder.classList.add('sideNavbar-hide');
     }
-    const mobileSetting: Element = select('.sb-mobile-setting');
+    const mobileSetting: Element = select('.sideNavbar-mobile-setting');
     isMobile = screen.matchMedia('(max-width:550px)').matches;
     if (isMobile && mobileSetting) {
         if (propPanel) {
-            mobileSetting.classList.remove('sb-hide');
+            mobileSetting.classList.remove('sideNavbar-hide');
             if (mobilePropPane.firstChild) {
                 detach(mobilePropPane.firstChild);
             }
             mobilePropPane.appendChild(propPanel);
         } else {
-            select('.sb-mobile-setting').classList.add('sb-hide');
+            select('.sideNavbar-mobile-setting').classList.add('sideNavbar-hide');
         }
     }
 }
@@ -141,7 +141,7 @@ function renderDescription(): void {
 
 function renderActionDescription(): void {
     const navigationActionDescriptionElement: HTMLElement = select(
-        '.sb-action-description',
+        '.sideNavbar-action-description',
     ) as HTMLElement;
     if (navigationActionDescriptionElement) {
         navigationActionDescriptionElement.style.display = 'none';

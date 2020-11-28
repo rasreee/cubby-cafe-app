@@ -1,16 +1,10 @@
 {
     "folders": [
         {
-            "path": "/Users/lesleychang/koodos/cubby-cafe-web"
+            "path": "/Users/lesleychang/koodos/cubby-cafe-app"
         }
     ],
-    "settings": {
-        "prettier.arrayExpand": true,
-        "prettier.breakProperty": true
-    },
-    "prettier.arrayExpand": true,
-    "prettier.alignObjectProperties": true,
-    "prettier.jsxBracketSameLine": true,
+    "prettier.configPath": "./.prettierrc",
     "typescript.format.insertSpaceAfterTypeAssertion": true,
     "typescript.tsdk": "node_modules/typescript/lib",
     "editor.stablePeek": true,
@@ -40,5 +34,5 @@
         "**/.git/objects/**",
         ".vscode"
     ],
-    "cSpell.userWords": ["syncfusion", "npmci", "esnext", "navigations"]
+    "cSpell.userWords": ["syncfusion", "npmci", "esnext", "navigations", "sidebarobj", "truetype", "devtool"],
 }
