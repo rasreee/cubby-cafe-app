@@ -1,0 +1,32 @@
+{
+    "folders": [
+        {
+            "path": "/Users/lesleychang/koodos/cubby-cafe-web"
+        },
+    ],
+    "settings": {
+        "prettier.arrayExpand": true,
+        "prettier.breakProperty": true
+    },
+    "prettier.arrayExpand": true,
+    "prettier.alignObjectProperties": true,
+    "prettier.jsxBracketSameLine": true,
+    "typescript.format.insertSpaceAfterTypeAssertion": true,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "editor.formatOnPaste": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.stablePeek": true,
+    "editor.formatOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+        {
+            "language": "typescriptreact",
+            "autoFix": true
+        }
+    ]
+}
