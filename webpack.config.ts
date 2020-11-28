@@ -29,9 +29,12 @@ const config: webpack.Configuration = {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
     },
+    devtool: 'source-map',
     devServer: {
         contentBase: path.join(__dirname, 'build'),
-        compress: true,
+        // compress: true,
+        hot: true,
+        liveReload: true,
         port: 3000,
     },
     plugins: [

@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome", // note this is not just "chrome" as the debugger is "JavaScript Debugger"
+            "request": "attach",
+            "name": "Attach Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}/src"
+        },
+        {
+            "type": "node",
+            "name": "Launch Program",
+            "request": "launch",
+            // "url": "http://localhost:3000",
+            "preLaunchTask": "tsc: build - tsconfig.json"
+
+            // "webRoot": "${workspaceFolder}/src/index.tsx" // make the path match your project
+        }
+    ]
+}
