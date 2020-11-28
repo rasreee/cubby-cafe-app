@@ -14,7 +14,6 @@
     "typescript.format.insertSpaceAfterTypeAssertion": true,
     "typescript.tsdk": "node_modules/typescript/lib",
     "editor.stablePeek": true,
-    "editor.formatOnSave": true,
     "workbench.colorCustomizations": {
         "statusBar.background": "#1A1A1A",
         "statusBar.noFolderBackground": "#212121",
@@ -31,5 +30,15 @@
             "language": "typescriptreact",
             "autoFix": true
         }
-    ]
+    ],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "cSpell.ignorePaths": [
+        "**/package-lock.json",
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/objects/**",
+        ".vscode"
+    ],
+    "cSpell.userWords": ["syncfusion", "npmci", "esnext", "navigations"]
 }

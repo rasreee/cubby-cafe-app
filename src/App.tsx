@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppContext } from './AppContext';
-import Header from './components/Header';
+import { SideNavBar } from './components/index';
 
 // import { getLinkPreview } from 'link-preview-js';
 
@@ -23,12 +23,12 @@ function App(): React.ReactElement {
     return (
         <AppContext.Provider
             value={{
-                lang: 'de',
-                authenticated: true,
+                lang: 'en',
+                authenticated: true, // TODO: remove static value
                 theme: 'light',
             }}
         >
-            <Header />
+            <SideNavBar />
         </AppContext.Provider>
     );
 }

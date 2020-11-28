@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppContext } from '../AppContext';
 
+// TODO: delete after implementing Side Bar
 function Header(): React.ReactElement {
     return (
         <AppContext.Consumer>
